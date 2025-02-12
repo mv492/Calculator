@@ -1,4 +1,3 @@
-# Import the Decimal class for precise decimal arithmetic
 from decimal import Decimal
 # Import Callable from typing to specify the operation as a callable type hint
 from typing import Callable

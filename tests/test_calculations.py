@@ -1,11 +1,17 @@
-'''My Calculator Test'''
 from decimal import Decimal
 import pytest
 
+# Import Calculation and Calculations classes from the calculator package,
+# assuming these are the correct paths following Python's package and module naming conventions.
 from calculator.calculation import Calculation
 from calculator.calculations import Calculations
+
+# Import arithmetic operation functions (add and subtract) to be tested.
 from calculator.operations import add, subtract
 
+# pytest.fixture is a decorator that marks a function as a fixture,
+# a setup mechanism used by pytest to initialize a test environment.
+# Here, it's used to define a fixture that prepares the test environment for calculations tests.
 @pytest.fixture
 def setup_calculations():
     """Clear history and add sample calculations for tests."""
@@ -29,6 +35,7 @@ def test_add_calculation(setup_calculations):
 
 def test_get_history(setup_calculations):
     """Test retrieving the entire calculation history."""
+    # Retrieve the calculation history.
     history = Calculations.get_history()
     # Assert that the history contains exactly 2 calculations,
     # which matches our setup in the setup_calculations fixture.
